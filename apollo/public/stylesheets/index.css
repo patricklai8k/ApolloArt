@@ -1,0 +1,8 @@
+.submission-card {
+  border: 1px solid #80808024;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 5px 5px gray;
+}

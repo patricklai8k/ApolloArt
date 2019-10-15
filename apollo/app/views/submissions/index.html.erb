@@ -1,5 +1,16 @@
-<h1>Submissions#index</h1>
-<% @submissions.each do |submission| %>
-  <h1><%=submission.title%></h1>
-  <p><%=submission.description%></p>
+<%= stylesheet_link_tag "index.css" %>
+<h1>All Submissions</h1>
+<% if logged_in? %>
+  <%= link_to('New subission', new_submission_path) %>
+  <% @submissions.each do |submission| %>
+    <div class="submission-card">
+      <h2><%=submission.title%></h2>
+      <%= link_to('Go to subission', submission_path(id: submission.id), method: 'get') %>
+      <br/>
+      <%= link_to(image_tag(submission.art.thumb.url, alt: 'Image'), submission.art.url, target: '_blank') if submission.art? %>
+      <p><%=submission.description%></p>
+    </div>
+  <% end %>
+<% else %>
+  please log in
 <% end %>

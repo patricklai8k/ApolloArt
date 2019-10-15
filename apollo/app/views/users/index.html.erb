@@ -1,0 +1,11 @@
+<h1>Users</h1>
+<% if logged_in? %>
+  <% @users.each do |user| %>
+    <h2>Name: <%=user.name%></h1>
+    <p>username: <%=user.username%></p>
+    <p>id: <%=user.id%></p>
+    <hr/>
+  <% end %>
+<% else %>
+  please log in
+<% end %>

@@ -1,0 +1,8 @@
+<h1>Log IN BROOOOO</h1>
+<%= form_tag 'login' do %>
+  <%= label_tag(:username, 'WHAT is yOuR 名前') %>
+  <%= text_field_tag :username %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+  <%= submit_tag 'log me in pls', class: 'btn btn-success' %>
+<% end %>

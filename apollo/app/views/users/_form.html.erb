@@ -1,0 +1,29 @@
+<% if user.errors %>
+  <ul>
+    <% user.errors.full_messages.each do |e| %>
+      <li><%= e %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= form_for user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br/>
+  <%= f.label :username %>
+  <br/>
+  <%= f.text_field :username %>
+  <br/>
+  <div>
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+  </div>
+  <div>
+    <%= label_tag :password%>
+    <%= password_field_tag :password%>
+  </div>
+  <div>
+    <%= label_tag :password_confirmation%>
+    <%= password_field_tag :password_confirmation%>
+  </div>
+  <%= f.submit "Create" %>
+<% end %>
